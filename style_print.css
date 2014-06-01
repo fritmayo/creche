@@ -1,0 +1,353 @@
+/*style.css
+
+Gère le style des pages qui seront imprimées
+*/
+
+/*----------------
+|    En-tête     |
+----------------*/
+
+/*En-tête de la page*/
+header
+{
+    display : none;
+}
+
+/*--------------------
+|    Menu gauche     |
+--------------------*/
+
+/*Menu le plus à gauche*/
+#leftMenu
+{
+    display : none;
+}
+
+/*-----------------------------------
+|    Option Section in left menu    |
+-----------------------------------*/
+
+/*Gère le menu d'options intégré au menu de gauche*/
+#leftMenuWithOpt
+{
+    display : none;
+}
+
+/*---------------------------
+|    Main forms section     |
+---------------------------*/
+
+/*Zones principales*/
+#menuForm, #annivForm, #infoForm
+{
+    position : absolute;
+    top : 0%;
+    left : 0%;
+
+    width : 100%;
+    min-height : 80%;
+
+    /*padding-top : 20px;*/
+    /*padding-left : 3%;*/
+    margin : auto;
+}
+
+/*----------------------
+|    Core sections     |
+----------------------*/
+
+/*Cellules du tableau*/
+#menuForm table td, #menuForm table th, #annivForm table td, #annivForm table th
+{
+    border-radius : 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+/*Suppression de la ligne horizontale séparant la section d'affichage et la section d'ajout*/
+#menuForm hr, #annivForm hr, #infoForm hr
+{
+    display : none;
+}
+
+/*Titre du tableau*/
+#menuForm table caption, #annivForm table caption
+{
+    font-size : 24px;
+    padding : 28px;
+}
+
+/*Masquage des liens des tableaux*/
+#menuForm a, #annivForm a
+{
+    color : black;
+    text-decoration : none;
+}
+
+/*Effacement des inputs (boutons, checkboxes,...)*/
+#menuForm > form > input, #annivForm > form > input, #infoForm > form > input
+{
+    display : none;
+}
+
+/*Effacement du tfoot (était déjà masqué)*/
+#menuForm table > tfoot, #annivForm table > tfoot
+{
+    display : none;
+}
+
+/*--------------------------
+|    Menu form section     |
+--------------------------*/
+
+/*Tableau principal*/
+#menuForm table
+{
+    text-align : center;
+
+    margin-top : 40px;
+    margin : auto;
+    width : 100%;
+
+    border-spacing : 0px;   /*remplace 'border-collapse' pour pouvoir arrondir les angles du tableau*/
+}
+
+#menuForm table th, #menuForm table tr td
+{
+    padding : 8px 16px;
+    border : 1px solid black;
+}
+
+#menuForm table thead tr th
+{
+    background-color : #FFE4C4;
+}
+
+/*Effacement des colonnes non désirées*/
+#menuForm table #thead_action, #menuForm table #thead_checkbox, #menuForm table .tbody_shortcutsBtnCell
+{
+    display : none;
+}
+
+/*Suppression des checkboxes*/
+#menuForm form table tbody tr td.checkbox, #menuForm form table thead tr th input
+{
+    display : none;
+}
+
+/*Suppression des boutons de modification et de suppression sous forme de miniatures*/
+#menuForm input.action_modif[type=submit], #menuForm input.action_suppr[type=submit]
+{
+    display : none;
+}
+
+/*Effacement du tableau destiné à l'ajout de menus*/
+#menuForm #tbl_addMenu
+{
+    display : none;
+}
+
+/*------------------------------
+|    Birthday form section     |
+------------------------------*/
+
+#annivForm table
+{
+    text-align : center;
+
+    margin-top : 40px;
+    margin : auto;
+    width : 80%;
+
+    border-spacing : 0px;   /*remplace 'border-collapse' pour pouvoir arrondir les angles du tableau*/
+}
+
+#annivForm table th, #annivForm table tr td
+{
+    padding : 8px 16px;
+    border : 1px solid black;
+}
+
+#annivForm table th
+{
+    background-color : Bisque;
+}
+
+/*Effacement des colonnes non désirées*/
+#annivForm table #thead_action, #annivForm table #thead_checkbox, #annivForm table .tbody_shortcutsBtnCell
+{
+    display : none;
+}
+
+/*Suppression des checkboxes*/
+#annivForm form table tbody tr td.checkbox, #annivForm form table thead tr th input
+{
+    display : none;
+}
+
+/*Suppression des boutons de modification et de suppression sous forme de miniatures*/
+#annivForm input.action_modif[type=submit], #annivForm input.action_suppr[type=submit]
+{
+    display : none;
+}
+
+/*Effacement du tableau destiné à l'ajout d'anniversaires*/
+#annivForm #tbl_addAnniv
+{
+    display : none;
+}
+
+/*------------------------
+|    Preview section     |
+------------------------*/
+
+#topForm_renderPage
+{
+    display : none;
+}
+
+#mainDiv_renderPage
+{
+    text-align : center;
+    font-size : 20px;
+    max-width : 19%;
+    min-width : 13%;
+    /*width : 16%;  <- pour éviter le redimensionnement des box quand on s'approche du bord ?*/
+}
+
+#mainDiv_renderPage p strong
+{
+    text-decoration : underline;
+}
+
+/*--------------------------------
+|    Parsing results section     |
+--------------------------------*/
+
+#parsed_topBtn
+{
+    display : none;
+}
+
+#parsed_resultList
+{
+    /*position : absolute;
+    top : 12%;
+    left : 17%;*/
+    width : 100%;
+    top : 0px;
+    left : 0px;
+    /*min-height : 80%;
+
+    padding-bottom : 20px;*/
+}
+
+.parsed_listItem
+{
+    border : 1px solid gray;
+    position : relative;
+
+    padding : 5px 10px;
+    margin-top : 10px;
+
+    width : 1000px;
+}
+
+.parsed_listItem h3.parsed_title
+{
+    background-color : #90EE90 !important;
+    -webkit-print-color-adjust : exact;
+    position : relative;
+
+    margin-bottom : 5px;
+    padding-left : 5px;
+}
+
+.parsed_listItem img.parsed_img
+{
+    display : inline;
+    vertical-align : top;
+
+    position : absolute;
+    top : 55px;
+    left : 10px;
+
+    float : left;
+}
+
+.parsed_listItem .parsed_divText
+{
+    position : relative;
+
+    top : 0px;
+    left : 135px;
+
+    max-width : 850px;
+}
+
+.parsed_listItem p.parsed_text
+{
+    position : relative;
+
+    top : -20px;
+}
+
+.parsed_listItem .parsed_category
+{
+    text-align : right;
+
+    position : relative;
+    top : -37px;
+    right : 5px;
+}
+
+/*----------------------
+|    Infos section     |
+----------------------*/
+
+/*Tableau principal*/
+#infoForm table
+{
+    text-align : center;
+
+    margin-top : 40px;
+    margin : auto;
+    width : 100%;
+
+    border-spacing : 0px;   /*remplace 'border-collapse' pour pouvoir arrondir les angles du tableau*/
+}
+
+#infoForm table tr th
+{
+    padding-top : 10px;
+    padding-bottom : 15px;
+
+    font-size : 18px;
+}
+
+/*Effacement des colonnes non désirées*/
+#infoForm table #thead_action, #infoForm table #thead_checkbox, #infoForm table .tbody_shortcutsBtnCell
+{
+    display : none;
+}
+
+/*Suppression des checkboxes*/
+#infoForm form table tbody tr td.checkbox, #infoForm form table thead tr th input
+{
+    display : none;
+}
+
+/*Suppression des boutons de modification et de suppression sous forme de miniatures*/
+#infoForm input.action_modif[type=submit], #infoForm input.action_suppr[type=submit]
+{
+    display : none;
+}
+
+/*Effacement du tableau destiné à l'ajout de menus*/
+#infoForm #tbl_addInfo
+{
+    display : none;
+}
+
+
+
